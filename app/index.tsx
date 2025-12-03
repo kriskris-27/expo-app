@@ -14,11 +14,9 @@ export default function Index() {
     async function fetchPokemons() {
         try{
             const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
-            
             const data = await res.json();
             console.log(data);
             setPokemon(data.results)
-            
         } 
         catch(e) {
             console.log(e);
@@ -32,7 +30,6 @@ export default function Index() {
                     <Text>{pokemon.name}</Text>
                 </View>
             ))}
-
         </ScrollView>    
     )
 }
